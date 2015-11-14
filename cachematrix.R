@@ -1,9 +1,9 @@
 ##Defines the function as a matrix and sets up the inverse dataframe
 makeCacheMatrix <- function(x = matrix()) {
-  inv <- NULL
+  inv = NULL
   
   ##Defines a function to assign a value to an object in an environment different from the current environment.
-  set <- function(y) {  
+  set = function(y) {  
     x <<- y
     inv <<- NULL
   }
@@ -13,12 +13,12 @@ makeCacheMatrix <- function(x = matrix()) {
   setinverse <- function(inverse) inv <<- inverse
   getinverse <- function() inv
   list(set=set,get=get,
-       setinver = setinverse,
+       setinverse = setinverse,
        getinverse=getinverse)
 }
 
 ##Function to calculate the inverse of the original matrix
-cachesolve <- function(x, ...) {
+cacheSolve <- function(x, ...) {
   inv <- x$getinverse()
   
   ##Checks to see if value is already stored  
